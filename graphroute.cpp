@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 
 using namespace std;
 
@@ -131,6 +132,27 @@ public:
 
 	}
 
+	void BFS(Node *root){
+		std::queue<Node*> q;
+		q.push(root);
+		visited[root->data]=true;
+
+		while(!q.empty()){
+			Node *r = q.front();
+			Node *tmp = lists[r->data].getHead();
+			cout<<r->data;
+			visited[r->data]=true;
+			while(tmp!=NULL){
+				if(visited[tmp->data]==false){
+					q.push(tmp);
+				}
+
+				tmp = tmp->getNext();
+			}
+			q.pop();
+		}
+	}
+
 };
 
 int main(){
@@ -147,5 +169,5 @@ int main(){
 	graph->insert(3,4);
 	graph->printGraph();
 	cout<<"\n\n\n";
-	graph->DFS(graph->lists[0].getHead());
+	graph->BFS(graph->lists[0].getHead());
 }
