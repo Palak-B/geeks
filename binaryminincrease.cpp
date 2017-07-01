@@ -108,7 +108,7 @@ Node* construct(int a[],int l, int r){
 
 }
 
-	void inorder(Node *root){
+	void inorder(TreeNode *root){
 
 		if(root!=NULL){
 			inorder(root->getLeft());
