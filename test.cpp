@@ -7,5 +7,6 @@ int main(){
 	cout<<"enter a number";
 	cin>>a;
 	//signed char c = a>>8;
+	cout<<"The entered number is ";
 	cout<<a<<endl;
 }
